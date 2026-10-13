@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gülhane Başarı Notu Hesaplayıcı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">SBÜ Gülhane Tıp Fakültesi · 3. Sınıf · 2026–2027</div>
+  </header>
+
+
+  <div class="grid">
+    <div style="display:grid; gap:28px; min-width:0">
+
+      <section class="block">
+        <div class="block-head">
+          <h2>Ders kurulları</h2>
+          <span class="share">Başarı notuna katkısı %60</span>
+        </div>
+        <div class="rows" id="kurulRows"></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <h2>Yıl sonu / Bütünleme sınavı</h2>
+          <span class="share">Başarı notuna katkısı %40</span>
+        </div>
+        <label class="toggle"><input type="checkbox" id="ysDetail" checked> Bileşenlerden hesapla (teorik, laboratuvar, mesleki beceri…)</label>
+        <div class="rows" id="ysRows"></div>
+      </section>
+
+      <div class="actions">
+        <button class="btn" id="clearBtn" type="button">Temizle</button>
+      </div>
+    </div>
+
+    <aside class="card" aria-live="polite">
+      <div class="need">
+        <span class="label">Geçmek için finalden gereken</span>
+        <div class="need-pair">
+          <div><span class="t">59,5 için</span><span class="value" id="needVal0">–</span></div>
+          <div><span class="t">60 için (resmi)</span><span class="value" id="needVal1">–</span></div>
+        </div>
+        <span class="sub" id="needText">Kurul notlarını girince görünecek.</span>
+      </div>
+      <div class="big">
+        <span class="label">Başarı notu</span>
+        <span class="value" id="bnVal">–</span>
+      </div>
+      <div>
+        <div class="bar" aria-hidden="true"><span class="k" id="barK"></span><span class="y" id="barY"></span></div>
+        <div class="legend"><span id="legK">Kurullar: –</span><span id="legY">Yıl sonu: –</span></div>
+      </div>
+      <dl>
+        <div><dt>Girilen kurulların ortalaması</dt><dd id="kPartial">–</dd></div>
+        <div><dt>Kurul ağırlıklı ortalaması</dt><dd id="kAvg">–</dd></div>
+        <div><dt>Kurulların katkısı (/60)</dt><dd id="kContrib">–</dd></div>
+        <div><dt>Yıl sonu notu</dt><dd id="ysVal">–</dd></div>
+        <div><dt>Yıl sonunun katkısı (/40)</dt><dd id="ysContrib">–</dd></div>
+      </dl>
+      <div class="chips" id="chips"></div>
+    </aside>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
